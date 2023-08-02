@@ -1,0 +1,29 @@
+manifestVersion: subsquid.io/v0.1
+name: my-awesome-mc-squid
+version: 1
+description: A squid that indexes USDC transfers on ETH and BSC
+build: 
+deploy:
+  addons:
+    postgres: 
+  processor:
+    - name: eth-processor
+      cmd:
+        - node
+        - lib/eth/main
+    - name: bsc-processor
+      cmd:
+        - node
+        - lib/bsc/main
+  api:
+    cmd:
+      - npx
+      - squid-graphql-server
+      - '--dumb-cache'
+      - in-memory
+      - '--dumb-cache-ttl'
+      - '1000'
+      - '--dumb-cache-size'
+      - '100'
+      - '--dumb-cache-max-age'
+      - '1000'
