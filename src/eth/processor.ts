@@ -14,10 +14,10 @@ export const ETH_USDC_ADDRESS = '0x7EA2be2df7BA6E54B1A9C70676f668455E329d29'.toL
 
 export const processor = new EvmBatchProcessor()
     .setDataSource({
-        archive: lookupArchive('eth-mainnet'),
-//        chain: 'https://rpc.ankr.com/eth',
+        archive: 'http://localhost:8000/network/ethereum-mainnet',
+        chain: 'https://rpc.ankr.com/eth',
     })
-//    .setFinalityConfirmation(75)
+    .setFinalityConfirmation(75)
     .setFields({
         log: {
             transactionHash: true

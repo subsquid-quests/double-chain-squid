@@ -14,10 +14,10 @@ export const BSC_USDC_ADDRESS = '0x8965349fb649A33a30cbFDa057D8eC2C48AbE2A2'.toL
 
 export const processor = new EvmBatchProcessor()
     .setDataSource({
-        archive: lookupArchive('binance'),
-//        chain: 'https://rpc.ankr.com/eth',
+        archive: 'http://localhost:8000/network/binance-mainnet',
+        chain: 'https://rpc.ankr.com/bsc',
     })
-//    .setFinalityConfirmation(75)
+    .setFinalityConfirmation(75)
     .setFields({
         log: {
             transactionHash: true

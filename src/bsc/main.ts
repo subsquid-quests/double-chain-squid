@@ -3,7 +3,7 @@ import {Transfer} from '../model'
 import * as erc20abi from '../abi/erc20'
 import {processor, BSC_USDC_ADDRESS} from './processor'
 
-processor.run(new TypeormDatabase({supportHotBlocks: false, stateSchema: 'bsc_processor'}), async (ctx) => {
+processor.run(new TypeormDatabase({supportHotBlocks: true, stateSchema: 'bsc_processor'}), async (ctx) => {
     const transfers: Transfer[] = []
     for (let c of ctx.blocks) {
         for (let log of c.logs) {
