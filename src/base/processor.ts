@@ -10,12 +10,13 @@ import {
 import {Store} from '@subsquid/typeorm-store'
 import * as erc20abi from '../abi/erc20'
 
-export const BSC_USDC_ADDRESS = '0x8965349fb649A33a30cbFDa057D8eC2C48AbE2A2'.toLowerCase()
+export const BASE_USDBC_ADDRESS = '0xd9aAEc86B65D86f6A7B5B1b0c42FFA531710b6CA'.toLowerCase()
 
 export const processor = new EvmBatchProcessor()
     .setDataSource({
-        archive: 'http://localhost:8000/network/binance-mainnet',
-        chain: 'https://rpc.ankr.com/bsc',
+//        archive: 'http://localhost:8000/network/base-mainnet',
+        archive: lookupArchive('base-mainnet'),
+        chain: 'https://rpc.ankr.com/base',
     })
     .setFinalityConfirmation(75)
     .setFields({
@@ -24,10 +25,10 @@ export const processor = new EvmBatchProcessor()
         }
     })
     .setBlockRange({
-        from: 28_000_000,
+        from: 3_800_000,
     })
     .addLog({
-        address: [BSC_USDC_ADDRESS],
+        address: [BASE_USDBC_ADDRESS],
         topic0: [erc20abi.events.Transfer.topic]
     })
 

@@ -1,7 +1,7 @@
 manifestVersion: subsquid.io/v0.1
 name: my-awesome-mc-squid
 version: 1
-description: A squid that indexes USDC transfers on ETH and BSC
+description: A squid that indexes USDC transfers on ETH and Base
 build: 
 deploy:
   addons:
@@ -11,10 +11,10 @@ deploy:
       cmd:
         - node
         - lib/eth/main
-    - name: bsc-processor
+    - name: base-processor
       cmd:
         - node
-        - lib/bsc/main
+        - lib/base/main
   api:
     cmd:
       - npx
