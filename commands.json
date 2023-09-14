@@ -10,7 +10,12 @@
         "deps": ["clean"],
         "cmd": ["tsc"]
       },
+      "check-key": {
+        "cmd": ["node", "query-gateway/scripts/checkKey.js", "query-gateway/keys/multiProc.key"],
+        "hidden": true
+      },
       "up": {
+        "deps": ["check-key"],
         "description": "Start a PG database",
         "cmd": ["docker-compose", "up", "-d"]
       },
@@ -49,10 +54,10 @@
         "deps": ["build", "migration:apply"],
         "cmd": ["node", "--require=dotenv/config", "lib/eth/main.js"]
       },
-      "process:bsc": {
-        "description": "Load .env and start the BSC squid processor",
+      "process:base": {
+        "description": "Load .env and start the Base squid processor",
         "deps": ["build", "migration:apply"],
-        "cmd": ["node", "--require=dotenv/config", "lib/bsc/main.js"]
+        "cmd": ["node", "--require=dotenv/config", "lib/base/main.js"]
       },
       "process:prod:eth": {
         "description": "Start the squid processor",
@@ -60,10 +65,10 @@
         "cmd": ["node", "lib/eth/main.js"],
         "hidden": true
       },
-      "process:prod:bsc": {
+      "process:prod:base": {
         "description": "Start the squid processor",
         "deps": ["migration:apply"],
-        "cmd": ["node", "lib/bsc/main.js"],
+        "cmd": ["node", "lib/base/main.js"],
         "hidden": true
       },
       "serve": {
