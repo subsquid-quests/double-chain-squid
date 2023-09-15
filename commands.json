@@ -54,10 +54,10 @@
         "deps": ["build", "migration:apply"],
         "cmd": ["node", "--require=dotenv/config", "lib/eth/main.js"]
       },
-      "process:base": {
-        "description": "Load .env and start the Base squid processor",
+      "process:bsc": {
+        "description": "Load .env and start the BSC squid processor",
         "deps": ["build", "migration:apply"],
-        "cmd": ["node", "--require=dotenv/config", "lib/base/main.js"]
+        "cmd": ["node", "--require=dotenv/config", "lib/bsc/main.js"]
       },
       "process:prod:eth": {
         "description": "Start the squid processor",
@@ -65,10 +65,10 @@
         "cmd": ["node", "lib/eth/main.js"],
         "hidden": true
       },
-      "process:prod:base": {
+      "process:prod:bsc": {
         "description": "Start the squid processor",
         "deps": ["migration:apply"],
-        "cmd": ["node", "lib/base/main.js"],
+        "cmd": ["node", "lib/bsc/main.js"],
         "hidden": true
       },
       "serve": {
