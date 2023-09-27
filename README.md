@@ -133,7 +133,7 @@ A healthy response should look similar to
    [eth-processor] 22:00:40 INFO  sqd:processor 16005819 / 18226899, rate: 1686 blocks/sec, mapping: 644 blocks/sec, 1224 items/sec, eta: 22m
    [bsc-processor] 22:00:44 INFO  sqd:processor 28011319 / 32107455, rate: 1503 blocks/sec, mapping: 648 blocks/sec, 1250 items/sec, eta: 46m
    ```
-   The squid should sync in 40-45 minutes. When it's done, stop it with Ctrl-C, then stop and remove the auxiliary containers with
+   The squid should sync in 25-30 minutes. When it's done, stop it with Ctrl-C, then stop and remove the auxiliary containers with
    ```bash
    sqd down
    ```
@@ -142,7 +142,7 @@ A healthy response should look similar to
 
 | Category         | Skill Level                          | Time required (minutes) | Max Participants | Reward                              | Status |
 | ---------------- | ------------------------------------ | ----------------------- | ---------------- | ----------------------------------- | ------ |
-| Squid Deployment | $\textcolor{green}{\textsf{Simple}}$ | ~50                     | -                | $\textcolor{red}{\textsf{750tSQD}}$ | open   |
+| Squid Deployment | $\textcolor{green}{\textsf{Simple}}$ | ~40                     | -                | $\textcolor{red}{\textsf{750tSQD}}$ | open   |
 
 # Acceptance critera
 
