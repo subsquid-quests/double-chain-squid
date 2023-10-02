@@ -96,12 +96,12 @@ A healthy response should look similar to
 
 1. Open a terminal and run the following commands to create the squid and enter its folder:
    ```bash
-   sqd init my-awesome-squid -t https://github.com/subsquid-quests/double-chain-squid
+   sqd init my-double-proc-squid -t https://github.com/subsquid-quests/double-chain-squid
    ```
    ```bash
-   cd my-awesome-squid
+   cd my-double-proc-squid
    ```
-   You can replace `my-awesome-squid` with any name you choose for your squid. If a squid with that name already exists in [Aquarium](https://docs.subsquid.io/deploy-squid/), the first command will throw an error; if that happens simply think of another name and repeat the commands.
+   You can replace `my-double-proc-squid` with any name you choose for your squid. If a squid with that name already exists in [Aquarium](https://docs.subsquid.io/deploy-squid/), the first command will throw an error; if that happens simply think of another name and repeat the commands.
 
 2. Press "Get Key" button in the quest card to obtain the `doubleProc.key` key file. Save it to the `./query-gateway/keys` subfolder of the squid folder. The file will be used by the query gateway container.
 
